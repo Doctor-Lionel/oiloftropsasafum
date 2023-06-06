@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>
+            My-Shoes-dot-com
+        </title>
+        <style>
+            #mainimage{
+    width:30%;
+    height:50%;
+    border-radius: 100%;
+    float: left;
+    margin: 5%;
+}
+
+.linklist{
+    display: inline;
+    list-style: square;
+
+}
+
+body{
+    background-color: cornsilk;
+    color: black;
+    font-size: 36px;
+}
+
+#maintext{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    font-size: 180%;
+    background-color: darkblue;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    padding: 20px;
+    text-align: center;
+    width:100%;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    box-shadow: 0px 10px 20px black;
+}
+
+@keyframes text{
+    from{
+        color: rgb(161, 0, 0);
+    }
+    14%{
+        color: rgb(112, 73, 0);
+    }
+    29%{
+        color: rgb(100, 100, 0);
+    }
+    43%{
+        color: rgb(0, 100, 0);
+    }
+    57%{
+        color: rgb(0, 0, 150);
+    }
+    71%{
+        color: rgb(104, 0, 179);
+    }
+    86%{
+        color: rgb(138, 0, 138);
+    }
+    to{
+        color: rgb(131, 0, 0);
+    }
+}
+
+.img1{
+    border-radius: 50%;
+    float: left;
+}
+
+.button1{
+    color: white;
+    margin: 25px;
+    float: right;
+}
+
+.button1:hover{
+    color: yellow;
+    text-decoration: none;
+}
+
+a{
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover{
+    color:yellow;
+    text-decoration: underline;
+}
+
+section a:hover{
+    color: green;
+    text-decoration: none;
+}
+
+.imagebutton{
+    padding: 30px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.imagebutton:hover{
+    padding: 0px;
+}
+
+h2{
+    color: darkblue;
+}
+
+footer p{
+    animation: text 14s linear 0s infinite forwards;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <strong class="header">
+                <img src="shoes/fav1.jpg" height="150" alt="Lionel" class="img1">
+                <a href="contact.html" class="button1">Contact</a>
+                <a href="products.html" class="button1">Products</a>
+            </strong>
+        </header>
+        <main>
+            <br><br><br><br>
+            <div>
+                <img src="shoes/fav1.jpg"height=400 id="picture">
+                <img src="shoes/fav2.jpg"height=400 id="picture">
+                <img src="shoes/fav3.jpg"height=400 id="picture">
+                <img src="shoes/fav4.jpg"height=400 id="picture">
+            </div>
+            <p id="mainText">
+                We sell quality hand-made shoes, boots, slippers and sandals at affordable prices.<br>
+                We are open to business at any time of the day
+            
+            </p>
+            <br><br><br><br><br>
+            <br><br><br><br><br>
+            <section>
+                <h2>Contact Us:</h2>
+                <p>Phone: +233-59-434-1007</p>
+                <a href="https://web.facebook.com/108601401021205?_rdc=1&_rdr&wtsid=rdr_03Qe8TMQofKhKWrQC">
+                    <img src="shoes/fb.png" alt="FB" class="imagebutton">
+                </a>
+                <a href="https://www.instagram.com/my_shoes_dot_com/">
+                    <img src="shoes/ig.png" alt="IG" class="imagebutton">
+                </a>
+            </section>  
+        </main>
+        <footer>
+            <br><br><br>
+            <p>Copyright © 2023 My Website</p>
+        </footer>
+        <script>
+var $style = document.getElementsByTagName("style")[0];
+var $myPic = document.getElementsByClassName('img1')[0];
+var $head = document.getElementsByTagName("head")[0];
+
+var $state = 0;
+
+var $darkText = document.createTextNode(`#mainimage{
+    width:30%;
+    height:50%;
+    border-radius: 100%;
+    float: left;
+    margin: 5%;
+}
+
+.linklist{
+    display: inline;
+    list-style: square;
+
+}
+
+body{
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-size: 36px;
+}
+
+#maintext{
+    color: white;
+}
+
+.header{
+    font-size: 180%;
+    background-color: blue;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    padding: 20px;
+    text-align: center;
+    width:100%;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+}
+
+@keyframes text{
+    from{
+        color: rgb(255, 137, 137);
+    }
+    14%{
+        color: rgb(253, 222, 165);
+    }
+    29%{
+        color: rgb(255, 255, 177);
+    }
+    43%{
+        color: rgb(169, 255, 169);
+    }
+    57%{
+        color: rgb(179, 179, 255);
+    }
+    71%{
+        color: rgb(224, 181, 255);
+    }
+    86%{
+        color: rgb(255, 179, 255);
+    }
+    to{
+        color: rgb(255, 168, 168);
+    }
+}
+
+.img1{
+    border-radius: 50%;
+    float: left;
+}
+
+.button1{
+    color: white;
+    margin: 25px;
+    float: right;
+}
+
+.button1:hover{
+    color: yellow;
+    text-decoration: none;
+}
+
+a{
+    color: yellowgreen;
+    text-decoration: none;
+}
+
+a:hover{
+    color:yellow;
+    text-decoration: underline;
+}
+
+section a:hover{
+    color: green;
+    text-decoration: none;
+}
+
+.imagebutton{
+    padding: 30px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.imagebutton:hover{
+    padding: 0px;
+}
+
+h2{
+    color: cyan;
+}
+
+footer p{
+    animation: text 14s linear 0s infinite forwards;
+}`);
+
+var $lightText = document.createTextNode(`#mainimage{
+    width:30%;
+    height:50%;
+    border-radius: 100%;
+    float: left;
+    margin: 5%;
+}
+
+.linklist{
+    display: inline;
+    list-style: square;
+
+}
+
+body{
+    background-color: cornsilk;
+    color: black;
+    font-size: 36px;
+}
+
+#maintext{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    font-size: 180%;
+    background-color: darkblue;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    padding: 20px;
+    text-align: center;
+    width:100%;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    box-shadow: 0px 10px 20px black;
+}
+
+@keyframes text{
+    from{
+        color: rgb(161, 0, 0);
+    }
+    14%{
+        color: rgb(112, 73, 0);
+    }
+    29%{
+        color: rgb(100, 100, 0);
+    }
+    43%{
+        color: rgb(0, 100, 0);
+    }
+    57%{
+        color: rgb(0, 0, 150);
+    }
+    71%{
+        color: rgb(104, 0, 179);
+    }
+    86%{
+        color: rgb(138, 0, 138);
+    }
+    to{
+        color: rgb(131, 0, 0);
+    }
+}
+
+.img1{
+    border-radius: 50%;
+    float: left;
+}
+
+.button1{
+    color: white;
+    margin: 25px;
+    float: right;
+}
+
+.button1:hover{
+    color: yellow;
+    text-decoration: none;
+}
+
+a{
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover{
+    color:yellow;
+    text-decoration: underline;
+}
+
+section a:hover{
+    color: green;
+    text-decoration: none;
+}
+
+.imagebutton{
+    padding: 30px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.imagebutton:hover{
+    padding: 0px;
+}
+
+h2{
+    color: darkblue;
+}
+
+footer p{
+    animation: text 14s linear 0s infinite forwards;
+}`);
+
+var $darkMode = document.createElement("style");
+var $lightMode = document.createElement("style");
+
+$darkMode.setAttribute("type", "text/css");
+$lightMode.setAttribute("type", "text/css");
+
+$darkMode.appendChild($darkText);
+$lightMode.appendChild($lightText);
+
+$head.replaceChild($lightMode, $style)
+function myFunction(){
+    if ($state == 0){
+        $head.replaceChild($darkMode, $lightMode);
+        $state = 1;
+    }else{
+        $head.replaceChild($lightMode, $darkMode);
+        $state = 0;
+    }
+
+}
+
+$myPic.addEventListener("click", myFunction);
+        </script>
+    </body>
+</html>
