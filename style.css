@@ -91,12 +91,10 @@ nav ul li a:hover::after{
     flex-direction: row;
 }
 
-.header-text h1 span{
+.header-text h1 a{
     margin-left: 0.3em;
     color: #00ffff;
-    display: flex;
-    flex-direction: row;
-
+    text-decoration: none;
 }
 
 nav svg{
