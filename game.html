@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+body::-webkit-scrollbar{
+    display: none;
+}
+body{
+    height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: #ffffff;
+    cursor: default;
+    user-select: none;
+    position: fixed;
+}
+
+#board{
+    background: black;
+    width: 100vmin;
+    height: 100vmin;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.square{
+    border: 1px solid #ffff00;
+    font-size: 15vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#alet{
+    position: fixed;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vmin;
+    height: 50vmin;
+    font: 10vmin;
+    background-color: #ffffff;
+    border-radius: 5vmin;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#text{
+    width: 90vmin;
+    height: 25vmin;
+    box-sizing: border-box;
+    font-size: 4vmin;
+    padding: 5vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+button{
+    cursor: pointer;
+    border:1px solid #000000;
+    background: #ffff00;
+    color: #000000;
+    width: 10vmin;
+    height: 5vmin;
+    font-size: 4vmin;
+    border-radius: 1vmin;
+}
+
+button:hover{
+    border:1px solid #ffff00;
+    background: #000000;
+    color: #ffff00;
+}
+    </style>
+    <script>
+        const squares = document.getElementsByClassName('square');
+        const board = document.getElementById('board');
+        let $state = true;
+        const possibilities = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+                                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                                [0, 4, 8], [2, 4, 6]];
+        let x_selected = [];
+        let o_selected = [];
+        let number = 0;
+        const dialogBox = document.getElementById('alet');
+        const textInBox = document.getElementById('text');
+        
+        function tellUser(x){
+            text.innerHTML = x;
+            alet.style.display = 'flex';
+        }
+        
+        function closeBox(){
+            alet.style.display = 'none';
+        }
+        
+        function checking(){
+            for(i = 0; i < 8; i++){
+                if ((x_selected.includes(possibilities[i][0])) && (x_selected.includes(possibilities[i][1])) && (x_selected.includes(possibilities[i][2]))){
+                    number = 0;
+                    x_selected = [];
+                    o_selected = [];
+                    tellUser('Player 1 wins the game!');
+                    for(box of squares){
+                        box.innerHTML = '';
+                    }
+                }else if ((o_selected.includes(possibilities[i][0])) && (o_selected.includes(possibilities[i][1])) && (o_selected.includes(possibilities[i][2]))){
+                    number = 0;
+                    x_selected = [];
+                    o_selected = [];
+                    tellUser('Player 2 wins the game!');
+                    for(box of squares){
+                        box.innerHTML = '';
+                    }
+                }
+            }
+            if (number > 8){
+                number = 0;
+                x_selected = [];
+                o_selected = [];
+                tellUser('Game Over. Wanna play a new game');
+                for(box of squares){
+                    box.innerHTML = '';
+                }
+            }
+        }
+        
+        function setvalue(x){
+            if (event.currentTarget.innerHTML == ''){
+                switch ($state){
+                    case (true):{
+                        event.currentTarget.style.color = '#00ff00';
+                        event.currentTarget.style.textShadow = '0 0 2vmin #00ff00';
+                        event.currentTarget.innerHTML = 'X';
+                        x_selected.push(x);
+                        $state = false;
+                        number++;
+                        break
+                    }
+                    case (false):{
+                        event.currentTarget.style.color = '#ff0000';
+                        event.currentTarget.style.textShadow = '0 0 2vmin #ff0000';
+                        event.currentTarget.innerHTML = 'O';
+                        o_selected.push(x);
+                        $state = true;
+                        number++;
+                        break
+                    }
+                }
+        
+            }
+            setInterval(() => {
+                checking();
+            }, 800);
+        }
+    </script>
+</head>
+<body>
+    <div id="board">
+        <div class="square" onclick="setvalue(0)"></div>
+        <div class="square" onclick="setvalue(1)"></div>
+        <div class="square" onclick="setvalue(2)"></div>
+        <div class="square" onclick="setvalue(3)"></div>
+        <div class="square" onclick="setvalue(4)"></div>
+        <div class="square" onclick="setvalue(5)"></div>
+        <div class="square" onclick="setvalue(6)"></div>
+        <div class="square" onclick="setvalue(7)"></div>
+        <div class="square" onclick="setvalue(8)"></div>
+    </div>
+    <div id="alet">
+        <div id="text"></div>
+        <button onclick="closeBox()">OK</button>
+    </div>
+</body>
+</html>
