@@ -5,6 +5,22 @@
     box-sizing: border-box;
     cursor:  default;
 }
+::-webkit-scrollbar{
+    width: 0.7em;
+}
+::-webkit-scrollbar-track{
+    background: #000000;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #00ffff;
+    height: 3px;
+}
+@supports (scrollbar-color: black #00ffff){
+    *{
+        scrollbar-color: #00ffff #000000;
+        scrollbar-width: thin;
+    }
+}
 
 html{
     scroll-behavior: smooth;
@@ -17,7 +33,7 @@ html{
 body{
     background-color: #000000;
     color: #ffffff;
-
+    overflow-x: hidden;
 }
 
 /*------------------------------------------------header----------------------------------*/
@@ -40,52 +56,108 @@ nav{
     flex-wrap: wrap;
 }
 
-#logo{
-    width: 120px;
+nav svg{
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
+#logo{
+    font-size: 1rem;
+    color: #00ffff;
+    font-family: 'Segoe Script';
+    position: relative;
+}
+
+#logo::after{
+    content: '';
+    width: 100%;
+    background: linear-gradient(to right,
+    #00ffff, #00000000);
+    height: 0.2rem;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    border-radius: 10px;
+}
+
+#logo::before {
+    content: '';
+    width: 100%;
+    background: linear-gradient(to left,
+            #00ffff, #00000000);
+    height: 0.2rem;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    border-radius: 10px;
+}
+
+nav ul {
+    background-color: #00ffff;
+    color: #000000;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 150px;
+    height: 120vh;
+    padding: 50px 50px 50px 0px;
+    z-index: 2;
+    transition: 0.5s;
+}
+    
 nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 10px 10px 10px;
+    display: block;
+    padding: 15px 25px 15px 25px;
+    font-weight: 550;
+    transition: 0.5s;
+    list-style-type: none;
+    width: inherit;
 }
 
 nav ul li a{
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     font-size: 18px;
     position: relative;
 }
 
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height:3px;
-    background: #00ffff;
+nav ul li:hover{
+    background: #000000;
+}
+
+nav ul li:hover a{
+    color: #00ffff;
+}
+
+nav ul svg{
     position: absolute;
-    left: 0;
-    bottom: -6px;
+    top: 0;
+    left: 25;
+    cursor: pointer;
     transition: 0.5s;
 }
 
-nav ul li a:hover::after{
-    width: 100%;
+nav ul svg:hover{
+    transform: scale(1.05);
 }
 
-
 .header-text{
-    margin-top: 20%;
-    font-size: 30px;
-    width: 80%;
+    margin-top: 20px;
+    font-size: 18px;
+    width: 100vw;
     position: absolute;
-    bottom: 50%;
+    bottom: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .header-text h1{
-    font-size: 60px;
+    font-size: 45px;
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -97,15 +169,11 @@ nav ul li a:hover::after{
     text-decoration: none;
 }
 
-nav svg{
-    display: none;
-}
-
 /*------------about------------------*/
 #about{
     padding: 80px 0 80px 0;
     color: #ababab;
-    margin-bottom: 500px;
+    margin-bottom: 100px;
 }
 
 .row{
@@ -186,7 +254,7 @@ nav svg{
 
 /*--------------------------------languages------------------------------------------*/
 .languages{
-    padding: 30px 0 30px 0;
+    padding: 30px 0 100px 0;
 }
 
 .languages .container{
@@ -503,52 +571,6 @@ div div div div p{
         font-size: 45px;
     }
 
-    nav svg{
-        display: block;
-        font-size: 25px;
-        cursor: pointer;
-    }
-
-    nav ul{
-        background-color: #00ffff;
-        color: #000000;
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 150px;
-        height: 120vh;
-        padding: 50px 50px 50px 30px;
-        z-index: 2;
-        transition: 0.5s;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 25px 25px 25px 5px;
-        font-weight: 550;
-        transition: 0.5s;
-    }
-    
-    nav ul li a {
-        color: #000000;
-    }
-
-    nav ul li:hover{
-        transform: translateX(5px);
-    }
-
-    nav ul svg{
-        position: absolute;
-        top: 0;
-        left: 25;
-        cursor: pointer;
-        transition: 0.5s;
-    }
-
-    nav ul svg:hover{
-        transform: scale(1.05);
-    }
-
     .subtitle{
        font-size: 40px; 
     }
@@ -579,6 +601,11 @@ div div div div p{
         align-items: center;
         justify-content: space-around;
         transition: 0.5s;
+    }
+
+    .langlist div svg{
+        height: 50px;
+        width: 50px;
     }
 
     .langlist div h2{
