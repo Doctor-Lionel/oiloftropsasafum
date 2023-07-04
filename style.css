@@ -4,17 +4,31 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     cursor:  default;
+    user-select: none;
 }
+
+:root{
+    --left-bg:#000000;
+    --left-color-1:#ffffff;
+    --left-color-2:#00ffff;
+    --right-bg:#ffffff;
+    --right-color-1:#000000;
+    --right-color-2:#0000ff;
+}
+
 ::-webkit-scrollbar{
     width: 0.7em;
 }
+
 ::-webkit-scrollbar-track{
     background: #000000;
 }
+
 ::-webkit-scrollbar-thumb{
     background-color: #00ffff;
     height: 3px;
 }
+
 @supports (scrollbar-color: black #00ffff){
     *{
         scrollbar-color: #00ffff #000000;
@@ -34,48 +48,51 @@ body{
     background-color: #000000;
     color: #ffffff;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 /*------------------------------------------------header----------------------------------*/
 .header{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
-.header .container{
-    padding: 10px 5% 10px 5%;
-}
 .container{
     padding: 10px 10% 10px 10%;
+    background-color: #000000;
 }
-
+/* 
 nav{
+    background-color: #0000ff;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
 }
 
-nav svg{
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
+.left nav{background-color: #0000ff;color:#000000;}
+.right nav{background-color: #0000ff;color:#000000;}
 
 #logo{
+    margin: 0 1rem 0 1rem;
     font-size: 1rem;
     color: #00ffff;
     font-family: 'Segoe Script';
     position: relative;
 }
 
+.left .logo{color:#000000;}
+.right .logo{color:#000000;}
+
 #logo::after{
     content: '';
     width: 100%;
-    background: linear-gradient(to right,
-    #00ffff, #00000000);
     height: 0.2rem;
     position: absolute;
     bottom: -3px;
@@ -83,11 +100,12 @@ nav svg{
     border-radius: 10px;
 }
 
+.left #logo::after{background: linear-gradient(to right,#00ffff, #00000000);}
+.right #logo::after{background: linear-gradient(to right,#00ffff, #00000000);}
+
 #logo::before {
     content: '';
     width: 100%;
-    background: linear-gradient(to left,
-            #00ffff, #00000000);
     height: 0.2rem;
     position: absolute;
     top: -3px;
@@ -95,32 +113,26 @@ nav svg{
     border-radius: 10px;
 }
 
+.left #logo::before{background: linear-gradient(to left,#00ffff, #00000000);}
+.right #logo::before{background: linear-gradient(to left,#00ffff, #00000000);}
+
 nav ul {
-    background-color: #00ffff;
-    color: #000000;
-    position: fixed;
-    top: 0;
-    right: -200px;
-    width: 150px;
-    height: 120vh;
-    padding: 50px 50px 50px 0px;
-    z-index: 2;
-    transition: 0.5s;
+    color: #00ffff;
+    display: flex;
+    gap: 1em;
+    transform: translate(-30%);
 }
     
 nav ul li{
     display: block;
-    padding: 15px 25px 15px 25px;
-    font-weight: 550;
-    transition: 0.5s;
+    font-weight: 500;
     list-style-type: none;
-    width: inherit;
 }
 
 nav ul li a{
     color: #000000;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1rem;
     position: relative;
 }
 
@@ -135,45 +147,65 @@ nav ul li:hover a{
 nav ul svg{
     position: absolute;
     top: 0;
-    left: 25;
+    transform: translateX(50%);
     cursor: pointer;
     transition: 0.5s;
 }
 
 nav ul svg:hover{
     transform: scale(1.05);
+}  */
+/* ----------------------------------spookythings in header------------------------ */
+.left, .right{
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
 }
 
-.header-text{
-    margin-top: 20px;
-    font-size: 18px;
+h1{
+    font-size: 3em;
+}
+
+.header-container{
+    height: 100vh;
     width: 100vw;
-    position: absolute;
-    bottom: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 }
 
-.header-text h1{
-    font-size: 45px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
+.left{
+    background: var(--left-bg);
+    color: var(--left-color-1);
+    width: 0;
+    z-index: -2;
 }
 
-.header-text h1 a{
-    margin-left: 0.3em;
-    color: #00ffff;
-    text-decoration: none;
+.right{
+    background: var(--right-bg);
+    color: var(--right-color-1);
+    z-index: -3;
 }
 
-/*------------about------------------*/
+span{
+    font-family: 'Segoe Script';
+    font-weight: bold;
+    width: 8em;
+}
+
+.right span{
+    color: var(--right-color-2);
+}
+
+.left span{
+    color: var(--left-color-2);
+}
+/*----------------------------------about-------------------------------------------------------------*/
 #about{
     padding: 80px 0 80px 0;
     color: #ababab;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
 }
 
 .row{
@@ -560,6 +592,14 @@ div div div div p{
     align-items: center;
 }
 
+.about, .languages, #services, #portfolio, #contact{
+    z-index: 1;
+    background-color: #000000;
+}
+
+.the-rest{
+    background: #000000;
+}
 /*-------------------------------------css for small screen----------------*/
 @media only screen and (max-width: 610px){
     .header-text{
