@@ -6,48 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OILOFTROPS'ASAFUM</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/jpg" href="./lionel.JPG">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="lionel.JPG">
 </head>
 
 <body>
     <div class='header'>
-        <div class="container">
-            <nav>
-                <div id="logo">mufasa</div>
-                <ul id="sidemenu">
-                    <svg class='headericon' onclick='closemenu()' width="30px" height="30px" viewBox="0 0 24 24"
-                        fill="none">
-                        <path
-                            d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM15.36 14.3C15.65 14.59 15.65 15.07 15.36 15.36C15.21 15.51 15.02 15.58 14.83 15.58C14.64 15.58 14.45 15.51 14.3 15.36L12 13.06L9.7 15.36C9.55 15.51 9.36 15.58 9.17 15.58C8.98 15.58 8.79 15.51 8.64 15.36C8.35 15.07 8.35 14.59 8.64 14.3L10.94 12L8.64 9.7C8.35 9.41 8.35 8.93 8.64 8.64C8.93 8.35 9.41 8.35 9.7 8.64L12 10.94L14.3 8.64C14.59 8.35 15.07 8.35 15.36 8.64C15.65 8.93 15.65 9.41 15.36 9.7L13.06 12L15.36 14.3Z"
-                            fill="#000000" />
-                    </svg>
-                    <li><a href="#home" onclick="closemenu()">Home</a></li>
-                    <li><a href="#about" onclick="closemenu()">About</a></li>
-                    <li><a href="#services" onclick="closemenu()">Services</a></li>
-                    <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
-                    <li><a href="#contact" onclick="closemenu()">Contact</a></li>
-                </ul>
-                <svg class='icon' onclick='openmenu()' width="40px" height="40px" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12ZM3 18C3 17.4477 3.44772 17 4 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H4C3.44772 19 3 18.5523 3 18Z"
-                        fill="#00ffff" />
-                </svg>
-            </nav>
-            <div class="header-text">
-                <p>UI/UX Designer</p>
-                <h1>Hi, I'm <a href='game.html'>
-                    Lionel
-                </a></h1>
+        <div class="header-container">
+            <div class="left">
+                <!-- <nav>
+                    <div id="logo">mufasa</div>
+                    <ul id="sidemenu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav> -->
+                <div class="header-container">
+                    <h1 class="text left-text">
+                        Hi, I'm <span>Lionel</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="right">
+                <!-- <nav>
+                    <div id="logo">mufasa</div>
+                    <ul id="sidemenu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav> -->
+                <div class="header-container">
+                    <h1 class="text right-text">
+                        Hi, I'm <span>Lionel</span>
+                    </h1>
+                </div>
             </div>
         </div>
     </div>
-    <!-------------------about----------------------------------------->
+    <div class="the-rest">
+            <!-------------------about----------------------------------------->
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="./lionel.JPG" alt="">
+                    <img src="lionel.JPG" alt="">
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
@@ -461,7 +469,7 @@
             <h1 class="subtitle">My Work</h1>
             <div class="worklist">
                 <div class="work">
-                    <img src="./iphone.jpeg" alt="">
+                    <img src="iphone.jpeg" alt="">
                     <div class="layer">
                         <h3>Space invaders</h3>
                         <p>
@@ -482,7 +490,7 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="./fav1.jpg" alt="">
+                    <img src="fav1.jpg" alt="">
                     <div class="layer">
                         <h3>Websites</h3>
                         <p>
@@ -502,7 +510,7 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="./github.jpeg" alt="">
+                    <img src="github.jpeg" alt="">
                     <div class="layer">
                         <h3>Other projects</h3>
                         <p>
@@ -593,9 +601,9 @@
                     <a href="./cv.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contactright">
-                    <form name="submit-to-google-sheet" style="cursor:text;">
-                        <input type="text" name="Name" placeholder="Your name" id='text' required>
-                        <input type="email" name="Email" placeholder="Your email" required>
+                    <form name="submit-to-google-sheet" style="cursor:text;" autocomplete="on">
+                        <input type="text" name="Name" placeholder="Your name" id='text'  autocomplete="on" required>
+                        <input type="email" name="Email" placeholder="Your email" autocomplete="on" required>
                         <textarea name="Message" rows="6" placeholder="Your message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
@@ -611,6 +619,7 @@
                 Copyright &COPY; Lionel Sefa-Boakye Yiadom 
             <p>
         </div>
+    </div>
     </div>
     <script src="script.js"></script>
     <script>
