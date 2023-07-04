@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="lionel.JPG">
 </head>
-
 <body>
     <div class='header'>
         <div class="header-container">
             <div class="left">
-                <!-- <nav>
-                    <div id="logo">mufasa</div>
-                    <ul id="sidemenu">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav> -->
                 <div class="header-container">
                     <h1 class="text left-text">
                         Hi, I'm <span>Lionel</span>
@@ -31,16 +19,6 @@
                 </div>
             </div>
             <div class="right">
-                <!-- <nav>
-                    <div id="logo">mufasa</div>
-                    <ul id="sidemenu">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav> -->
                 <div class="header-container">
                     <h1 class="text right-text">
                         Hi, I'm <span>Lionel</span>
@@ -50,7 +28,6 @@
         </div>
     </div>
     <div class="the-rest">
-            <!-------------------about----------------------------------------->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -165,7 +142,6 @@
             </div>
         </div>
     </div>
-    <!--------------------------------------languages--------------------------------->
     <div class="languages">
         <div class="container">
             <h1 class="subtitle">My Skills</h1>
@@ -321,7 +297,6 @@
             </div>
         </div>
     </div>
-    <!--------------------------services------------------------------------------->
     <div id="services">
         <div class="container">
             <h1 class="subtitle">My Services</h1>
@@ -463,7 +438,6 @@
             </div>
         </div>
     </div>
-    <!------------------------------------------------portfolio-------------------------->
     <div id="portfolio">
         <div class="container">
             <h1 class="subtitle">My Work</h1>
@@ -533,7 +507,6 @@
             <a href="https://github.com/Doctor-Lionel" class="btn">See more</a>
         </div>
     </div>
-    <!----------------------------------------------------contact------------------------------>
     <div id="contact">
         <div class="container">
             <div class="row">
@@ -608,7 +581,6 @@
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
                     <span id="msg">
-                        
                     </span>
                 </div>
             </div>
@@ -626,7 +598,6 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzOXvNTSm2UFXbXLETjBu_EU9rJoc6QqCFRmvCIoi6z2XrA1g5SoP-BWmIqs9WNPPvi6Q/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById('msg');
-
         form.addEventListener('submit', e => {
           e.preventDefault()
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
